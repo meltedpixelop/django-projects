@@ -191,8 +191,8 @@
         }
       }
       return cookieValue;
-    }
-  // ////////////////////////////////////////////////
+    } 
+  // //////////////////////////////////////////////// commands
         function sendPinCommand(pins, state) {
             var csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
 
@@ -238,9 +238,9 @@
                     document.getElementById('esp32-ip').value = response.ipaddr;
                     setIpAddress();
                     if (response.status=="connected"){
-                      $('.btn-str').removeAttr('disabled');
-                      $(".btn-str").removeClass("btn-danger");
-                      $(".btn-str").addClass("btn-success");
+                      $('.btn-str').removeAttr('disabled'); //show satrt button 
+                      $(".btn-str").removeClass("btn-danger"); // change colr bootstrap based
+                      $(".btn-str").addClass("btn-success"); //change colr ""
                     }
                     else{
                       $('.table-ctr').attr('hidden','hidden');
@@ -255,7 +255,7 @@
             xhr.send();
         }
 
-        setInterval(checkConnection, 5000); // Check connection every 5 seconds
+        setInterval(checkConnection, 5000); //refresh con stat every 5 seconds
     </script>
 </body>
 </html>
